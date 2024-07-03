@@ -11,7 +11,7 @@ class Banner(models.Model):
 
 class About(models.Model):
     title=models.CharField(max_length=255)
-    img=models.ImageField
+    img=models.ImageField()
     detail=models.TextField()
     
     def __str__(self):
@@ -19,14 +19,21 @@ class About(models.Model):
 
 
 
-class Creative_work(models.Model):
-    title = models.CharField(max_length=255)
-    img = models.FileField()
-    detail = models.TextField()
+class Address(models.Model):
+    f_name  = models.CharField(max_length=255)
+    phone = models.CharField(max_length=13)
+    email = models.EmailField()
+    messege = models.TextField()
+   
     
     def __str__(self):
-        return f"({self.img})" 
+        return f"({self.f_name}, {self.phone}, {self.email}, {self.messege})"
+    
 
+    
+    
+
+    
 
 
 
